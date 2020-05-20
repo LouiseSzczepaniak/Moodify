@@ -1,0 +1,295 @@
+:root{
+    --principale:#1dc6f2;
+    --secondaire:#676767;
+    --grisclair:#acacac;
+}
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: var(--principale);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+    font-size:62.5%;
+}
+
+body{
+    background: white;
+    height:100vh;
+    width:100vw;
+    display:flex;
+}
+#main{
+    width:80%;
+}
+#pjax-container{
+    height:100%;
+    overflow: auto;
+    padding-top:3rem;
+    padding-left:5rem;
+    padding-right:5rem;
+    padding-bottom:10rem;
+}
+
+/* Page de connexion */
+.formconnexion{
+    height:100%;
+    text-align: center;
+}
+.formconnexion > form{
+    height:min-content;
+    min-height:50%;
+    padding-top:4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formconnexion > h3{
+    text-align: center;
+    font-size:1.8rem;
+    padding-top:6rem;
+}
+.input_form{
+    width:60%;
+    height:16%;
+    border:0.4rem solid var(--principale);
+    font-size:2rem;
+    margin-bottom:4rem;
+    border-radius: 1rem;
+    padding:1rem;
+}
+.input_form_password{
+    width:45%;
+    height:50%;
+    border:0.4rem solid var(--principale);
+    font-size:2rem;
+    margin-bottom:4rem;
+    border-radius: 1rem;
+    padding:1rem;
+}
+.remember{
+    width:60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:0.5rem;
+}
+button.bouton_auth{
+    width:50%;
+    border:0.5rem solid var(--principale);
+    border-radius:6rem;
+    color:var(--principale);
+    text-align: center;
+    background-color: white;
+    height:15%;
+    font-size:1.8rem;
+    margin-top:4rem;
+}
+button.bouton_auth:hover{
+    color:white;
+    background-color: var(--principale);
+    cursor: pointer;
+}
+.mdpoublie{
+    color:var(--secondaire);
+    font-size:1.5rem;
+}
+.erreurlogin{
+    color:red;
+    padding-bottom:2rem;
+    font-size:2.2rem;
+}
+.versinscription{
+    text-decoration: none;
+    color:var(--principale);
+    font-size:1.8rem;
+}
+
+
+/* Responsive */
+@media screen and (max-width:800px){
+    body{
+        flex-direction:column;
+    }
+    .titre>a{
+        display: block;
+        text-decoration: none;
+        color:var(--secondaire);
+    }
+    #main{
+        width:100%;
+        display:flex;
+        flex-direction: column;
+    }
+    #pjax-container{
+        height:90vh;
+        padding:0;
+    }
+    #search{
+        width:90%;
+        margin:0.7rem auto;
+        position: relative;
+        right:0;
+    }
+    #search input[type="search"]{
+        width: 60%;
+    }
+    #search input[type="submit"]{
+        width: 40%;
+    }
+    .infos_user{
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+    .infos{
+        padding-left: 0;
+    }
+    .menu{
+        padding-left: 1rem;
+    }
+    .fit-play{
+        margin-left: 0;
+    }
+    .photo_user{
+        width: 2.9rem;
+        height: 2.9rem;
+    }
+    .favrep{
+        display: none;
+    }
+    .listfavor{
+        justify-content: space-between;
+        width:70%;
+    }
+    .listfavorglobal{
+        justify-content: space-around;
+    }
+    .error404 img{
+        height: 30rem;
+    }
+    .menucote{
+        display: none;
+    }
+    .menu2{
+        display: flex;
+        justify-content: space-evenly;
+        padding:2rem 0;
+        background-color:var(--principale);
+    }
+    .menu2 > a > i{
+        text-decoration:none;
+        color:white;
+        font-size:2.9rem;
+    }
+    .div_chansons{
+        padding:0;
+        height:73vh;
+        width:100%;
+    }
+    .chansons{
+        height:88%;
+    }
+    .rech{
+        height:72%!important;
+    }
+    .flip-card{
+        margin:0 0 2rem 0;
+        width:65vw;
+        height:65vw;
+    }
+    .flip-card:last-child{
+        margin:0 0 8rem 0;
+    }
+    .playlist_back,.titrechanson,.lancement > h2{
+        font-size:1.9rem;
+    }
+    .addplaylist{
+        font-size:1.5rem;
+    }
+    .lancement > h2{
+        font-size:1.8rem;
+    }
+    .album-image{
+        display:none;
+    }
+    a.a_plus > i.plus{
+        font-size:3rem;
+    }
+    a.a_like > i.jelike{
+        font-size:4rem;
+    }
+    a.a_like > i.jelikepas{
+        font-size:4rem;
+    }
+
+    /* Page user */
+    .user{
+        flex-direction: column;
+        margin-top:0;
+    }
+    .info h3{
+        margin: 5rem 0 0 0;
+        font-size:2.6rem;
+    }
+    .bas{
+        margin-top:2rem;
+    }
+    .deconnexion_button{
+        display:block;
+    }
+    .mdp{
+        flex-direction: column;
+        display: flex;
+        width:70%;
+        margin:0 auto;
+    }
+    .input_form_password{
+        width:100%;
+        margin-bottom:1rem;
+    }
+    button.bouton_auth{
+        width:70%;
+        margin-top:1rem;
+    }
+    .input_form{
+        margin-bottom:1rem;
+        width:70%;
+    }
+    .formconnexion > h3{
+        padding-top:0;
+    }
+    .formconnexion > form{
+        margin-bottom:1rem;
+    }
+    .my_checkbox{
+        font-size:1.3rem;
+        width:max-content;
+        align-self: flex-start;
+
+    }
+    .mdpoublie{
+        align-self: flex-end;
+        font-size:1.3rem;
+    }
+    .remember{
+        width:70%;
+        flex-direction: column-reverse;
+    }
+    .erreurlogin{
+        font-size:1.2rem;
+    }
+
+}
+
+
