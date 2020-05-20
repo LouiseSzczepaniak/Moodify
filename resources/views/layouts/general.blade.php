@@ -13,42 +13,127 @@
         </head>
         <body>
 
-            <div style="display:none;">
+            
             @auth
-            <div class="infos_user">
-                <a href="/utilisateur/{{Auth::id()}}" data-pjax><div class="photo_user" style="background-image: url('{{$utilisateur->url_avatar ?? ''}}')"></div></a>
-                <div class="infos">
-                    <p>{{$utilisateur->name ?? ''}}</p>
+           
+           <div class="flex">
+               <div class="logo-home"></div>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" role="button" data-pjax>
-                        <p>Déconnexion</p>
+                        <div class="logout">Deco</div>
                     </a>
-
+            </div>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;" data-pjax>
                         @csrf
                     </form>
-                </div>
+                
+             <div id="main">
+                <div class="home-bck"></div>
+                 <div class="quote">L'optimisme est une forme supérieure de l'égoïsme.</div>
+                 
+                 <!-- CALENDRIER -->
+                 <div id="calender">
+		<!-- h1 'off-color' class was removed -->
+		<table>
+			<thead class="color">
+				<tr>
+					<th colspan="7" class="border-color">
+						<h4 id="cal-year" contenteditable="true">2018</h4>
+						<div>
+							<i class="fas fa-caret-left icon"> </i>
+							<h3 id="cal-month">july</h3>
+							<i class="fas fa-caret-right icon"> </i>
+						</div>
+					</th>
+				</tr>
+
+				<tr>
+					<th class="weekday border-color">Sun</th>
+					<th class="weekday border-color">Mon</th>
+					<th class="weekday border-color">Tue</th>
+					<th class="weekday border-color">Wed</th>
+					<th class="weekday border-color">Thu</th>
+					<th class="weekday border-color">Fri</th>
+					<th class="weekday border-color">Sat</th>
+				</tr>
+			</thead>
+
+			<tbody id="table-body">
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td class="tooltip-container">
+						<span class="day">1</span>
+						<img src="./images/note1.png" alt="note" />
+						<span class="tooltip"> this is pretty tooltip</span>
+					</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+                 
+                 <!-- FIN CALENDRIER -->
+                 <div class="menu">
+                 <div class="home"></div>
+                 <div class="settings"></div>
+                 </div>
             </div>
             @endauth
-            </div>
+           
 
-            <div id="main">
-                <div id="pjax-container" class="contenumain">
-                    @yield('contenu')
-                </div>
-            </div>
+           
 
-            <div class="menu2">
-                <a href="/" data-pjax><i class="fas fa-home"></i></a>
-                @auth
-                    <a href="/utilisateur/{{Auth::id()}}" data-pjax><div class="photo_user" style="background-image: url('{{$utilisateur->url_avatar ?? ''}}')"></div></a>
-                    <a href="#" data-pjax><i class="fas fa-music"></i></a>
-                    <a href="#" data-pjax><i class="fas fa-file-audio"></i></a>
-                    <a href="#" data-pjax><i class="fas fa-star"></i></a>
-                @endauth
-                @guest
-                    <a href="connexion" data-pjax><i class="fas fa-user-plus"></i></a>
-            </div>
-            @endguest
+            
 
 
             <script src="/js/jquery.js"></script>
